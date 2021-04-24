@@ -25,7 +25,7 @@ export default function Workshop() {
     try {
       setLoadingVisible(true)
       const requestAPI = await api.get(`/Api/Oficina?codigoAssociacao=601&cpfAssociado=""`)
-     // console.log("loadData", requestAPI.data.ListaOficinas);
+      // console.log("loadData", requestAPI.data.ListaOficinas);
       setData(requestAPI.data.ListaOficinas)
     } catch (err) {
       const message =
@@ -39,18 +39,10 @@ export default function Workshop() {
     }
   }
 
-  /*   const renderItem = (item) => {
-      return (
-        <TouchableOpacity
-          style={}
-          onPress={() => { }}
-        >
-          <Text>Teste</Text>
-        </TouchableOpacity >
-  
-      )
-    } */
-
+  function navigateToDetailsWorkshop(props) {
+    console.log('props navigateToDetailsWorkshop:',props);
+    navigation.navigate('DetailsWorkshop', props)
+  }
 
   return (
     <>
@@ -81,11 +73,11 @@ export default function Workshop() {
           keyExtractor={item => item.id}
           renderItem={({ item }) => (
             <TouchableOpacity
-              key={item.id}
+
               style={styles.mainCard}
-              onPress={() => { }}
+              onPress={() => navigateToDetailsWorkshop(item)}
             >
-              <View style={styles.mainCardItem}>
+              <View style={styles.mainCardItem} key={item.id}>
                 <View style={styles.mainCardPhoto}>
                   <Image
                     source={{ uri: `data:image/png;base64,${item.Foto}` }}
@@ -94,13 +86,13 @@ export default function Workshop() {
                   />
                   <View style={styles.mainCardDistance}>
                     <Image
-                      source={require('../../../assets/images/addCar.png')}
+                      source={require('../../../assets/images/carLocation.png')}
                       style={styles.mainCardDistanceIcon}
                       resizeMode={'contain'}
                     />
                     <Text style={styles.mainCardDistanceTitle}>3,7KM</Text>
                   </View>
-                    <Text style={styles.mainCardDistanceText}>Distancia</Text>
+                  <Text style={styles.mainCardDistanceText}>Distancia</Text>
                 </View>
                 <View style={styles.mainCardDetails}>
                   <Text style={styles.mainCardDetailsTitle} numberOfLines={2}>{item.Nome}</Text>
