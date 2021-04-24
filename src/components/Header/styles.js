@@ -11,7 +11,7 @@ export default StyleSheet.create({
     backgroundColor: colors.blue1,
   },
   backButton: {
-    zIndex: 9,
+    zIndex: 2,
     width: '20%',
     alignItems: 'center',
     justifyContent: 'center',
@@ -45,5 +45,4 @@ export default StyleSheet.create({
     paddingVertical: sizes.small,
     //backgroundColor: colors.black,
   },
-
 })
