@@ -7,9 +7,10 @@ import images from '../../constants/imagensBase64'
 import styles from './styles'
 
 export default function Header(props) {
-  const { arrowWhite, title, image64, containerShadow, data } = props
   const { height, width } = Dimensions.get('window');
   const navigation = useNavigation()
+
+  const { title, image64, borderRadius, data } = props
   /* 
   useEffect(() => {
     console.log('data', data.scene.descriptor.options);
@@ -17,44 +18,35 @@ export default function Header(props) {
   
  */
   return (
-
-    <View style={styles.container}>
-      <TouchableOpacity
-        onPress={() => navigation.pop()}
-        style={styles.backButton}
-      >
-        {
-          arrowWhite == true || null || undefined
-            ?
-            <Image
-              source={{ uri: images.arrowLeftWhite }}
-              style={styles.arrowIcon}
-              resizeMode={'contain'}
-            />
-            :
-            <Image
-              source={{ uri: images.arrowLeftYellow }}
-              style={styles.arrowIcon}
-              resizeMode={'contain'}
-            />
-        }
-      </TouchableOpacity>
-      <View style={styles.title}>
-        {image64 == undefined || null
-          ?
-          <></>
-          :
+    <>
+      <StatusBar backgroundColor={colors.blue1} barStyle="light-content" />
+      <View style={[styles.container, { borderBottomRightRadius: borderRadius, borderBottomLeftRadius: borderRadius, }]}>
+        <TouchableOpacity
+          onPress={() => navigation.pop()}
+          style={styles.backButton}
+        >
           <Image
-            source={{ uri: image64 }}
-            style={styles.drinkTitleIcon}
+            source={{ uri: images.arrowWhite }}
+            style={styles.arrowIcon}
             resizeMode={'contain'}
           />
-        }
-        <Text style={styles.drinkTitleText} numberOfLines={1}>{title}</Text>
+        </TouchableOpacity>
+
+        <View style={styles.title}>
+          {image64 == undefined || null
+            ?
+            <></>
+            :
+            <Image
+              source={{ uri: image64 }}
+              style={styles.drinkTitleIcon}
+              resizeMode={'contain'}
+            />
+          }
+          <Text style={styles.drinkTitleText} numberOfLines={1}>{title}</Text>
+        </View>
 
       </View>
-
-    </View>
-
+    </>
   );
 }

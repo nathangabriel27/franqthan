@@ -3,19 +3,12 @@ const { height, width } = Dimensions.get('window');
 import { colors, sizes } from '../../constants/theme';
 
 export default StyleSheet.create({
-  linearGradient: {
-    width: '100%',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-    elevation: 1,
-  },
   container: {
-    flex: 1,
     alignItems: 'center',
     flexDirection: 'row',
     justifyContent: 'center',
-    //backgroundColor: colors.red1,
+    paddingTop: sizes.medium,
+    backgroundColor: colors.blue1,
   },
   backButton: {
     zIndex: 9,
@@ -25,9 +18,10 @@ export default StyleSheet.create({
     //backgroundColor: colors.blue1,
   },
   arrowIcon: {
-    height: 50,
-    width: 40,
+    width: 20,
+    height: 30,
     margin: sizes.medium,
+    padding: sizes.medium,
   },
   title: {
     width: '80%',
@@ -37,18 +31,18 @@ export default StyleSheet.create({
     //backgroundColor: colors.green,
   },
   drinkTitleIcon: {
-    height: 25,
     width: 25,
+    height: 25,
     margin: sizes.small,
   },
   drinkTitleText: {
     width: '90%',
     marginLeft: '-20%',
     textAlign: 'center',
-    paddingVertical: sizes.small,
-    fontFamily: 'Nunito-Bold',
-    fontSize: sizes.title,
     color: colors.white,
+    fontSize: sizes.title,
+    fontFamily: 'Nunito-Bold',
+    paddingVertical: sizes.small,
     //backgroundColor: colors.black,
   },
 

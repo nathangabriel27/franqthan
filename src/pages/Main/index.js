@@ -17,6 +17,10 @@ export default function Main() {
   const navigation = useNavigation()
   const [loadingVisible, setLoadingVisible] = useState(false)
 
+  function navigateToWorkshop(props) {
+    //console.log('props:',props);
+    navigation.navigate('Workshop')
+  }
   /* 
     async function loadAuth(param) {
       try {
@@ -55,7 +59,7 @@ export default function Main() {
       <View style={styles.main}>
         <TouchableOpacity
           style={styles.mainCard}
-          onPress={() => { }}
+          onPress={() => navigateToWorkshop()}
         >
           <Image
             source={{ uri: images.workshop }}
@@ -89,9 +93,8 @@ export default function Main() {
       </View>
 
       <View style={styles.footer}>
-
         <View style={styles.footerCard}>
-          <Text style={styles.footerCardPlanText}>Plano: Azul</Text>
+          <Text style={styles.footerCardPlanText}>{`Plano: ${car.plan}`}</Text>
           <TouchableOpacity
             style={styles.footerCardItem}
             onPress={() => { }}
@@ -109,8 +112,6 @@ export default function Main() {
               <Text style={styles.footerCardSubtitle}>{`Media de ${car.kmWheelsets}Km/rodados`}</Text>
               <Text style={styles.footerCardSubtitle}>{`Valor fipe: $${car.fipe}`}</Text>
             </View>
-
-
 
           </TouchableOpacity>
         </View>
