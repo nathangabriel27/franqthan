@@ -21,6 +21,10 @@ export default function Main() {
     //console.log('props:',props);
     navigation.navigate('Workshop')
   }
+  function navigateToSelectAssociated(props) {
+    //console.log('props:',props);
+    navigation.navigate('SelectAssociated')
+  }
   /* 
     async function loadAuth(param) {
       try {
@@ -70,7 +74,7 @@ export default function Main() {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.mainCard}
-          onPress={() => { }}
+          onPress={() => navigateToSelectAssociated()}
         >
           <Image
             source={{ uri: images.addFriend }}

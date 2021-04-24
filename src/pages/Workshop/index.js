@@ -49,7 +49,7 @@ export default function Workshop() {
     navigation.navigate('DetailsWorkshop', props)
   }
   
-
+  const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState();
   const searchFilter = (text) => {
     if (text) {
@@ -68,7 +68,6 @@ export default function Workshop() {
       setSearch(text);
     }
   }
-  const [search, setSearch] = useState('');
   return (
     <>
       <Loading loadingVisible={loadingVisible} />

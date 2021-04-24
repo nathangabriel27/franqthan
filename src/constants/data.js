@@ -9,7 +9,6 @@ const usersProfile = {
   codAssociado: 601,
   photoProfile: 'https://avatars0.githubusercontent.com/u/43018177?v=4',
 
-
 }
 
 

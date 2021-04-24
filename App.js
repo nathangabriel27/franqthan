@@ -15,6 +15,7 @@ export default function App() {
         "Montserrat-Bold": require("./assets/fonts/Montserrat/Montserrat-Bold.ttf"),
         "Nunito-Bold": require("./assets/fonts/Nunito/Nunito-Bold.ttf"),
         "Nunito-Regular": require("./assets/fonts/Nunito/Nunito-Regular.ttf"),
+
       })
     ],
       //console.log('Fonte carregada')

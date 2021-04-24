@@ -6,6 +6,13 @@ import { NavigationContainer } from '@react-navigation/native';
 import Main from '../pages/Main'
 import Workshop from '../pages/Workshop'
 import DetailsWorkshop from '../pages/DetailsWorkshop'
+import SelectAssociated from '../pages/SelectAssociated'
+import CreateAssociated from '../pages/CreateAssociated'
+
+import Mercosul from '../pages/Mercosul'
+import DataFriend from '../pages/DataFriend'
+import SendFriend from '../pages/SendFriend'
+
 
 //Components
 import Header from '../components/Header'
@@ -41,6 +48,46 @@ export default function Routes() {
               data={props}
               borderRadius={0}
               title={''}
+            />,
+          }} />
+        <Stack.Screen name="SelectAssociated" component={SelectAssociated}
+          options={{
+            header: props => <Header
+              data={props}
+              borderRadius={25}
+              title={'Associado'}
+            />,
+          }} />
+        <Stack.Screen name="CreateAssociated" component={CreateAssociated}
+          options={{
+            header: props => <Header
+              data={props}
+              borderRadius={25}
+              title={'Dados do associado'}
+            />,
+          }} />
+        <Stack.Screen name="Mercosul" component={Mercosul}
+          options={{
+            header: props => <Header
+              data={props}
+              borderRadius={25}
+              title={'Dados do associado'}
+            />,
+          }} />
+        <Stack.Screen name="DataFriend" component={DataFriend}
+          options={{
+            header: props => <Header
+              data={props}
+              borderRadius={25}
+              title={'Dados do amigo'}
+            />,
+          }} />
+        <Stack.Screen name="SendFriend" component={SendFriend}
+          options={{
+            header: props => <Header
+              data={props}
+              borderRadius={25}
+              title={'Convite'}
             />,
           }} />
       </Stack.Navigator>
