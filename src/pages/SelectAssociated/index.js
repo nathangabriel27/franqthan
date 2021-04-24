@@ -26,6 +26,18 @@ export default function SelectAssociated() {
     console.log('props navigateToDetailsWorkshop:', props);
     navigation.navigate('CreateAssociated', props)
   }
+  function navigateToDataFriend(props) {
+    const data = {
+      name: usersProfile.name,
+      CPF: usersProfile.cpf,
+      email: usersProfile.email,
+      phone: usersProfile.phone,
+      codAssociado: usersProfile.codAssociado,
+      placa: usersProfile.placa,
+      photo: usersProfile.photoProfile,
+    }
+    navigation.navigate('DataFriend', data)
+  }
 
 
   return (
@@ -46,7 +58,7 @@ export default function SelectAssociated() {
         </TouchableOpacity>
         <TouchableOpacity
           style={styles.defaultButton}
-          onPress={() => { }}
+          onPress={() => navigateToDataFriend()}
         >
           <Image
             source={{ uri: usersProfile.photoProfile }}

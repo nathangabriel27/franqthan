@@ -22,7 +22,7 @@ export default function CreateAssociated() {
   const emailRef = useRef()
   const [phone, setPhone] = useState('')
   const phoneRef = useRef()
-  const [codAssociado, setCodAssociado] = useState('')
+  const [codAssociado, setCodAssociado] = useState()
   const codAssociadoRef = useRef()
 
 
@@ -38,9 +38,9 @@ export default function CreateAssociated() {
       CPF: CPF,
       email: email,
       phone: phone,
-      codAssociado: codAssociado,
+      codAssociado: parseInt(codAssociado),
     }
-   // console.log('data navigateToMercosul:', data);
+    // console.log('data navigateToMercosul:', data);
     navigation.navigate('Mercosul', data)
   }
 

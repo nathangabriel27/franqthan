@@ -26,6 +26,49 @@ export default function SendFriend() {
     navigation.navigate('DetailsWorkshop', props)
   }
 
+  async function sendInviteFriend() {
+    try {
+      setLoadingVisible(true)
+
+      const requestAPI = await api.post('/Api/Indicacao', {
+
+        Indicacao: {
+          CodigoAssociacao: route.params.codAssociado,
+          CpfAssociado: route.params.CPF,
+          EmailAssociado: route.params.email,
+          NomeAssociado: route.params.name,
+          TelefoneAssociado: route.params.phone,
+          PlacaVeiculoAssociado: route.params.placa,
+          NomeAmigo: route.params.friendName,
+          TelefoneAmigo: route.params.friendPhone,
+          EmailAmigo: route.params.friendEmail,
+          DataCriacao: "2016-10-30"
+
+        },
+        Remetente: "romulo.marques@hinovamobile.com.br",
+        Copias: []
+
+      })
+      console.log("sendInviteFriend", requestAPI.data);
+      //setData(requestAPI.data.ListaOficinas)
+      //setFilteredData(requestAPI.data.ListaOficinas)
+      //setTimeout(function () { setLoadingVisible(false) }, 2000);
+
+
+
+
+    } catch (err) {
+      const message =
+        err.response && err.response.data
+          ? ` Não foi possivel enviar dados para a API. Verique sua conexão. \nErro code: [ ${err} ]`
+          : 'Não foi possivel enviar dados para a API.';
+
+      Alert.alert('Ooopsss', message);
+      setTimeout(function () { setLoadingVisible(false) }, 2000);
+
+      //setLoading(false)
+    }
+  }
 
   return (
     <>
@@ -93,7 +136,7 @@ export default function SendFriend() {
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.footerButton}
-          onPress={() => navigateToMercosul()}
+          onPress={() => sendInviteFriend()}
         >
           <Text style={styles.footerText}>Enviar convite</Text>
           <Image

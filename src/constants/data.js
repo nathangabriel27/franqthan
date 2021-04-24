@@ -6,7 +6,8 @@ const usersProfile = {
   email: 'nathangabriel27@gmail.com',
   phone: '31994827158',
   cpf: '10025017999',
-  codAssociado: 601,
+  codAssociado: 627,
+  placa: 'UAI2A20',
   photoProfile: 'https://avatars0.githubusercontent.com/u/43018177?v=4',
 
 }
