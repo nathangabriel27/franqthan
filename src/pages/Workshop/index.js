@@ -28,7 +28,7 @@ export default function Workshop() {
       // console.log("loadData", requestAPI.data.ListaOficinas);
       setData(requestAPI.data.ListaOficinas)
       setFilteredData(requestAPI.data.ListaOficinas)
-      setTimeout(function () { setLoadingVisible(false) }, 2000);
+      setTimeout(function () { setLoadingVisible(false) }, 500);
 
 
     } catch (err) {
@@ -38,7 +38,7 @@ export default function Workshop() {
           : 'Não foi possivel enviar dados para a API.';
 
       Alert.alert('Ooopsss', message);
-      setTimeout(function () { setLoadingVisible(false) }, 2000);
+      setLoadingVisible(false) 
 
       //setLoading(false)
     }

@@ -44,7 +44,6 @@ export default function CreateAssociated() {
     navigation.navigate('Mercosul', data)
   }
 
-
   return (
     <TouchableWithoutFeedback
       onPress={Keyboard.dismiss}

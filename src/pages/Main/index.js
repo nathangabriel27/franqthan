@@ -83,7 +83,7 @@ export default function Main() {
           />
           <Text style={styles.mainCardText}>{`Indicar um\namigo`}</Text>
         </TouchableOpacity>
-        <TouchableOpacity
+{/*         <TouchableOpacity
           style={styles.mainCard}
           onPress={() => { }}
         >
@@ -93,7 +93,7 @@ export default function Main() {
             resizeMode={'contain'}
           />
           <Text style={styles.mainCardText}>{`Adicionar\nnovo Veiculo`}</Text>
-        </TouchableOpacity>
+        </TouchableOpacity> */}
       </View>
 
       <View style={styles.footer}>

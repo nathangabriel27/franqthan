@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Image, TextInput, Text, TouchableOpacity, View, StatusBar, Alert, FlatList, Platform, ScrollView } from 'react-native';
 import { FontAwesome5 } from '@expo/vector-icons';
+import moment from "moment";
 
 
 //Context
@@ -42,20 +43,22 @@ export default function SendFriend() {
           NomeAmigo: route.params.friendName,
           TelefoneAmigo: route.params.friendPhone,
           EmailAmigo: route.params.friendEmail,
-          DataCriacao: "2016-10-30"
+          DataCriacao: moment().format('YYYY-MM-DD'),
 
         },
         Remetente: "romulo.marques@hinovamobile.com.br",
         Copias: []
 
       })
-      console.log("sendInviteFriend", requestAPI.data);
-      //setData(requestAPI.data.ListaOficinas)
-      //setFilteredData(requestAPI.data.ListaOficinas)
-      //setTimeout(function () { setLoadingVisible(false) }, 2000);
+      console.log("sendInviteFriend", requestAPI.data.Sucesso);
+      if (requestAPI.data.Sucesso === "Indicacao enviada com sucesso!") {
+        return Alert.alert("Obaaa", `Seu amigo ${route.params.friendName}\nfoi indicado com sucesso !`),
+          navigation.navigate('Main')
+      } else {
+        return Alert.alert('Tivemos um probleminha', 'mas fique tranquilo, ja estamos resolvendo 😉')
+      }
 
-
-
+      setLoadingVisible(false)
 
     } catch (err) {
       const message =
@@ -72,6 +75,7 @@ export default function SendFriend() {
 
   return (
     <>
+      <Loading loadingVisible={loadingVisible} />
       <View style={styles.main}>
         <Text style={styles.title}>Associado</Text>
 
@@ -119,16 +123,15 @@ export default function SendFriend() {
         </TouchableOpacity>
         <Text style={styles.title}>Amigo</Text>
         <TouchableOpacity
+          disabled={true}
           style={styles.defaultButton}
-          onPress={() => { }}
+        //onPress={() => console.log(moment().format('YYYY-MM-DD'))}
         >
-
           <View style={styles.defaultDetails}>
             <Text style={styles.defaultName}>{route.params.friendName}</Text>
             <Text style={styles.defaultMail}>{route.params.friendEmail}</Text>
             <Text style={styles.defaultMail}>{`${route.params.friendPhone}`}</Text>
           </View>
-
         </TouchableOpacity>
 
       </View>

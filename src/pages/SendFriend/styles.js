@@ -86,8 +86,6 @@ export default StyleSheet.create({
     color: colors.white,
     fontSize: sizes.text,
     fontFamily: 'Montserrat-Regular',
-
-
   },
   footerIcon: {
     zIndex: 2,

@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import { Alert, ActivityIndicator, StyleSheet, Text, View } from 'react-native';
+import { Dimensions, ActivityIndicator, StyleSheet, Text, View } from 'react-native';
 import { colors, sizes } from '../../constants/theme';
 
+const { height, width } = Dimensions.get('window');
 export default function Loading(props) {
+
   const { loadingVisible, mensage } = props
   //const loadingVisible = false
   /* 
@@ -29,10 +31,11 @@ const styles = StyleSheet.create({
     backgroundColor: "rgba(0,0,0,0.5)",
     position: 'absolute',
     zIndex: 999,
-    height: '100%',
-    width: '100%',
+    height: height,
+    width: width,
     justifyContent: 'center',
     alignItems: 'center',
+    elevation: 5,
   },
   text: {
     color: colors.white,
