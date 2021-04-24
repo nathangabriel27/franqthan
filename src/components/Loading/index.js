@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Alert, ActivityIndicator, StyleSheet, Text, View } from 'react-native';
-import { colors, sizes} from '../../constants/theme';
+import { colors, sizes } from '../../constants/theme';
 
 export default function Loading(props) {
   const { loadingVisible, mensage } = props
@@ -14,7 +14,7 @@ export default function Loading(props) {
     <>
       { loadingVisible ?
         <View style={styles.container}>
-          <ActivityIndicator size="large" color="#EB9D01" />
+          <ActivityIndicator size="large" color={colors.blue} />
           <Text style={styles.text}>Acessando dados ... </Text>
         </View>
         :

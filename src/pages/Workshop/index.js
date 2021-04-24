@@ -27,6 +27,10 @@ export default function Workshop() {
       const requestAPI = await api.get(`/Api/Oficina?codigoAssociacao=601&cpfAssociado=""`)
       // console.log("loadData", requestAPI.data.ListaOficinas);
       setData(requestAPI.data.ListaOficinas)
+      setFilteredData(requestAPI.data.ListaOficinas)
+      setTimeout(function () { setLoadingVisible(false) }, 2000);
+
+
     } catch (err) {
       const message =
         err.response && err.response.data
@@ -34,18 +38,41 @@ export default function Workshop() {
           : 'Não foi possivel enviar dados para a API.';
 
       Alert.alert('Ooopsss', message);
-      setLoadingVisible(false)
+      setTimeout(function () { setLoadingVisible(false) }, 2000);
+
       //setLoading(false)
     }
   }
 
   function navigateToDetailsWorkshop(props) {
-    console.log('props navigateToDetailsWorkshop:',props);
+    console.log('props navigateToDetailsWorkshop:', props);
     navigation.navigate('DetailsWorkshop', props)
   }
+  
 
+  const [filteredData, setFilteredData] = useState();
+  const searchFilter = (text) => {
+    if (text) {
+      const newData = filteredData.filter(
+        function (item) {
+          const itemData = item.Nome
+            ? item.Nome.toUpperCase()
+            : ''.toUpperCase();
+          const textData = text.toUpperCase();
+          return itemData.indexOf(textData) > -1;
+        });
+      setData(newData);
+      setSearch(text);
+    } else {
+      setData(filteredData);
+      setSearch(text);
+    }
+  }
+  const [search, setSearch] = useState('');
   return (
     <>
+      <Loading loadingVisible={loadingVisible} />
+
       <View style={styles.header}>
         <TextInput
           style={styles.headerInput}
@@ -54,9 +81,9 @@ export default function Workshop() {
           placeholderTextColor='#aaa'
           autoCapitalize="words"
           keyboardType="default"
-          returnKeyType={'next'}
-        //value={nameDrink}
-        //onChangeText={(text) => setNameDrink(text)}
+          returnKeyType={'search'}
+          value={search}
+          onChangeText={(text) => searchFilter(text)}
         />
         <TouchableOpacity
           style={styles.headerMap}
@@ -68,6 +95,7 @@ export default function Workshop() {
 
 
       <View style={styles.main}>
+
         <FlatList
           data={data}
           keyExtractor={item => item.id}
