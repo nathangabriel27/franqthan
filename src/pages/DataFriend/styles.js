@@ -6,10 +6,11 @@ import { colors, sizes, theme } from '../../constants/theme';
 export default StyleSheet.create({
   main: {
     flex: 1,
-    padding: sizes.small,
+    padding: sizes.medium,
   },
   title: {
     marginHorizontal: sizes.medium,
+    marginVertical: sizes.medium,
     color: colors.blue,
     fontSize: sizes.text,
     fontFamily: 'Montserrat-Bold',
@@ -30,61 +31,66 @@ export default StyleSheet.create({
     elevation: 3,
   },
   mainInput: {
-
+    // backgroundColor: colors.red,
+    margin: sizes.small,
+    padding: sizes.small,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.gray4,
+    fontFamily: 'Montserrat-Regular',
   },
-
-
 
 
   footer: {
-
+    padding: sizes.small,
+    justifyContent: 'center',
+    alignItems: 'center',
   },
   footerButton: {
-
+    backgroundColor: colors.blue1,
+    width: '90%',
+    paddingVertical: sizes.medium,
+    margin: sizes.medium,
+    borderRadius: 15,
+    flexDirection: 'row',
+    justifyContent: 'flex-end',
+    alignItems: 'center',
   },
   footerText: {
+    position: 'absolute',
+    width: '100%',
+    textAlign: 'center',
+    marginVertical: sizes.medium,
+    color: colors.white,
+    fontSize: sizes.text,
+    fontFamily: 'Montserrat-Regular',
+   
 
   },
   footerIcon: {
-
+    zIndex: 2,
+    width: 30,
+    height: 30,
+    marginHorizontal: sizes.medium,
+    
   },
+  /*
+  
+  name: route.params.name,
+      CPF: route.params.CPF,
+      email: route.params.email,
+      phone: route.params.phone,
+      : route.params.codAssociado,
+      placa: route.params.placa,
+      friendName: name,
+      friendEmail: email,
+      friendPhone: phone,
+      photo: 'default',
+  
+  
+  
+  */
 
 
-
-
-
-
-  defaultProfilePhoto: {
-    width: 90,
-    height: 90,
-    marginHorizontal: sizes.small,
-    borderRadius: 200,
-    borderWidth: 1,
-    borderColor: colors.blue,
-  },
-  defaultDetails: {
-    flex: 1,
-    padding: sizes.small,
-  },
-  defaultName: {
-    marginHorizontal: sizes.small,
-    color: colors.blue,
-    fontSize: sizes.text,
-    fontFamily: 'Montserrat-Bold',
-  },
-  defaultMail: {
-    marginHorizontal: sizes.small,
-    color: colors.blue,
-    fontSize: sizes.text,
-    fontFamily: 'Montserrat-Regular',
-  },
-  defaultCodAssociado: {
-    flex: 1,
-    marginHorizontal: sizes.small,
-    color: colors.blue,
-    fontSize: sizes.text,
-    fontFamily: 'Montserrat-Bold',
-  },
 
 
 

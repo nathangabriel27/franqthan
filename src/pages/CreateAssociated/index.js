@@ -15,14 +15,14 @@ export default function CreateAssociated() {
   const navigation = useNavigation()
   const [loadingVisible, setLoadingVisible] = useState(false)
 
-  const [name, setName] = useState()
-  const [CPF, setCPF] = useState()
+  const [name, setName] = useState('')
+  const [CPF, setCPF] = useState('')
   const CPFRef = useRef()
-  const [email, setEmail] = useState()
+  const [email, setEmail] = useState('')
   const emailRef = useRef()
-  const [telefone, setTelefone] = useState()
-  const telefoneRef = useRef()
-  const [codAssociado, setCodAssociado] = useState()
+  const [phone, setPhone] = useState('')
+  const phoneRef = useRef()
+  const [codAssociado, setCodAssociado] = useState('')
   const codAssociadoRef = useRef()
 
 
@@ -32,9 +32,16 @@ export default function CreateAssociated() {
   }, [])
 
 
-  function navigateToDetailsWorkshop(props) {
-    console.log('props navigateToDetailsWorkshop:', props);
-    navigation.navigate('DetailsWorkshop', props)
+  function navigateToMercosul(props) {
+    const data = {
+      name: name,
+      CPF: CPF,
+      email: email,
+      phone: phone,
+      codAssociado: codAssociado,
+    }
+   // console.log('data navigateToMercosul:', data);
+    navigation.navigate('Mercosul', data)
   }
 
 
@@ -69,7 +76,7 @@ export default function CreateAssociated() {
               placeholder="CPF"
               placeholderTextColor='#aaa'
               autoCapitalize="words"
-              keyboardType="default"
+              keyboardType="phone-pad"
               returnKeyType={'next'}
               value={CPF}
               ref={CPFRef}
@@ -81,13 +88,13 @@ export default function CreateAssociated() {
               autoCorrect={false}
               placeholder="Email"
               placeholderTextColor='#aaa'
-              autoCapitalize="words"
-              keyboardType="default"
+              autoCapitalize="none"
+              keyboardType="email-address"
               returnKeyType={'next'}
               value={email}
               ref={emailRef}
               onChangeText={(text) => setEmail(text)}
-              onSubmitEditing={() => telefoneRef.current.focus()}
+              onSubmitEditing={() => phoneRef.current.focus()}
             />
             <TextInput
               style={styles.mainInput}
@@ -95,11 +102,11 @@ export default function CreateAssociated() {
               placeholder="Telefone"
               placeholderTextColor='#aaa'
               autoCapitalize="words"
-              keyboardType="default"
+              keyboardType="phone-pad"
               returnKeyType={'next'}
-              value={telefone}
-              ref={telefoneRef}
-              onChangeText={(text) => setTelefone(text)}
+              value={phone}
+              ref={phoneRef}
+              onChangeText={(text) => setPhone(text)}
               onSubmitEditing={() => codAssociadoRef.current.focus()}
             />
             <TextInput
@@ -108,12 +115,12 @@ export default function CreateAssociated() {
               placeholder="Codigo associado"
               placeholderTextColor='#aaa'
               autoCapitalize="words"
-              keyboardType="default"
+              keyboardType="phone-pad"
               returnKeyType={'send'}
               value={codAssociado}
               ref={codAssociadoRef}
               onChangeText={(text) => setCodAssociado(text)}
-              onSubmitEditing={() => { }}
+              onSubmitEditing={() => navigateToMercosul()}
             />
           </View>
 
@@ -121,11 +128,11 @@ export default function CreateAssociated() {
         <View style={styles.footer}>
           <TouchableOpacity
             style={styles.footerButton}
-            onPress={() => { }}
+            onPress={() => navigateToMercosul()}
           >
             <Text style={styles.footerText}>Próximo</Text>
             <Image
-              source={{ uri: images.arrowWhite }}
+              source={{ uri: images.arrowWhiteRight }}
               style={styles.footerIcon}
               resizeMode={'contain'}
             />

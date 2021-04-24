@@ -48,7 +48,7 @@ export default StyleSheet.create({
   footerButton: {
     backgroundColor: colors.blue1,
     width: '90%',
-    padding: sizes.medium,
+    paddingVertical: sizes.medium,
     margin: sizes.medium,
     borderRadius: 15,
     flexDirection: 'row',
@@ -59,10 +59,11 @@ export default StyleSheet.create({
     position: 'absolute',
     width: '100%',
     textAlign: 'center',
-    margin: sizes.medium,
+    marginVertical: sizes.medium,
     color: colors.white,
     fontSize: sizes.text,
     fontFamily: 'Montserrat-Regular',
+   
 
   },
   footerIcon: {
