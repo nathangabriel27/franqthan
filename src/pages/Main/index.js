@@ -9,7 +9,8 @@ import { MaterialIcons } from '@expo/vector-icons';
 import styles from './styles';
 import { api, http } from '../../services/api'
 import Loading from '../../components/Loading'
-//import images from '../../components/imagensBase64'
+import images from '../../constants/imagensBase64'
+import { car } from '../../constants/data'
 
 export default function Main() {
   const route = useRoute()
@@ -47,15 +48,73 @@ export default function Main() {
   return (
     <>
       <View style={styles.header}>
-        <Text>Olá</Text>
-        <Text>Nathan Gabriel</Text>
+        <Text style={styles.headerTitle}>Olá</Text>
+        <Text style={styles.headerSubtitle}>Nathan Gabriel</Text>
       </View>
+
       <View style={styles.main}>
-        <Text>Main</Text>
+        <TouchableOpacity
+          style={styles.mainCard}
+          onPress={() => { }}
+        >
+          <Image
+            source={{ uri: images.workshop }}
+            style={styles.mainCardIcon}
+            resizeMode={'contain'}
+          />
+          <Text style={styles.mainCardText}>{`\nOficinas`}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.mainCard}
+          onPress={() => { }}
+        >
+          <Image
+            source={{ uri: images.addFriend }}
+            style={styles.mainCardIcon}
+            resizeMode={'contain'}
+          />
+          <Text style={styles.mainCardText}>{`Indicar um\namigo`}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity
+          style={styles.mainCard}
+          onPress={() => { }}
+        >
+          <Image
+            source={{ uri: images.workshop }}
+            style={styles.mainCardIcon}
+            resizeMode={'contain'}
+          />
+          <Text style={styles.mainCardText}>{`Adicionar\nnovo Veiculo`}</Text>
+        </TouchableOpacity>
       </View>
+
       <View style={styles.footer}>
-        <Text>footer</Text>
-      </View>
+
+        <View style={styles.footerCard}>
+          <Text style={styles.footerCardPlanText}>Plano: Azul</Text>
+          <TouchableOpacity
+            style={styles.footerCardItem}
+            onPress={() => { }}
+          >
+            <Image
+              source={require('../../../assets/images/carro-novo-onix.png')}
+              style={styles.footerCardIcon}
+              resizeMode={'contain'}
+            />
+            <View style={styles.footerCardDetailsTitle}>
+              <Text style={styles.footerCardTitle}>{`${car.name}`}</Text>
+              <Text style={styles.footerCardSubtitle}>{`${car.year}`}</Text>
+            </View>
+            <View style={styles.footerCardDetails}>
+              <Text style={styles.footerCardSubtitle}>{`Media de ${car.kmWheelsets}Km/rodados`}</Text>
+              <Text style={styles.footerCardSubtitle}>{`Valor fipe: $${car.fipe}`}</Text>
+            </View>
+
+
+
+          </TouchableOpacity>
+        </View>
+      </View >
     </>
 
   );

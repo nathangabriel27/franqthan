@@ -98,4 +98,12 @@ const usersProfile = [
 
   },
 ]
-export { usersProfile }
+
+const car = {
+  name: 'Chevrolet Onix 1.0 LT (Flex) ',
+  kmWheelsets: '69.0000',
+  fipe: '57.784',
+  year: '2019',
+  
+}
+export { usersProfile, car }

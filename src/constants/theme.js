@@ -1,4 +1,16 @@
 const colors = {
+  blue: '#0C1248',
+  blue1: '#3D4585',
+  white: '#FFFFFF',
+
+  gray: '#656363',
+  gray1: '#AAAAAA',
+  gray2: '#BDBFC7',
+  gray3: '#D8D8D8',
+  gray4: '#F2F2F2',
+  gray5: '#FBFBFB',
+
+
   green: '#3da859',
   green1: '#21853b',
   green3: '#04CB01',
@@ -9,8 +21,6 @@ const colors = {
   red2: '#a82d2d',
   redGoogle1: '#E57970',
   redGoogle2: '#EA4335',
-  blue: '#464ba3',
-  blue1: '#191f8c',
   blueFacebook1: '#6484C6',
   blueFacebook2: '#3B5998',
   yellow: '#FFC000',
@@ -25,7 +35,6 @@ const colors = {
   gray3: '#D8D8D8',
   gray4: '#F2F2F2',
   gray5: '#FBFBFB',
-  white: '#FFFFFF',
   orange: '#ba501c',
 };
 const theme = {
