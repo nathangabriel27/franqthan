@@ -13,7 +13,7 @@ export default function SelectAssociated() {
   const navigation = useNavigation()
 
   function navigateToCreateAssociated(props) {
-    console.log('props navigateToDetailsWorkshop:', props);
+   //console.log('props navigateToDetailsWorkshop:', props);
     navigation.navigate('CreateAssociated', props)
   }
   function navigateToDataFriend(props) {
