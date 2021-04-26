@@ -8,10 +8,10 @@ import Workshop from '../pages/Workshop'
 import DetailsWorkshop from '../pages/DetailsWorkshop'
 import SelectAssociated from '../pages/SelectAssociated'
 import CreateAssociated from '../pages/CreateAssociated'
-
 import Mercosul from '../pages/Mercosul'
 import DataFriend from '../pages/DataFriend'
 import SendFriend from '../pages/SendFriend'
+import MapWorkshops from '../pages/MapWorkshops'
 
 
 //Components
@@ -88,6 +88,14 @@ export default function Routes() {
               data={props}
               borderRadius={25}
               title={'Convite'}
+            />,
+          }} />
+        <Stack.Screen name="MapWorkshops" component={MapWorkshops}
+          options={{
+            header: props => <Header
+              data={props}
+              borderRadius={25}
+              title={'Mapa de oficinas'}
             />,
           }} />
       </Stack.Navigator>

@@ -25,11 +25,11 @@ export default function Workshop() {
     try {
       setLoadingVisible(true)
       const requestAPI = await api.get(`/Api/Oficina?codigoAssociacao=601&cpfAssociado=""`)
-      // console.log("loadData", requestAPI.data.ListaOficinas);
       setData(requestAPI.data.ListaOficinas)
       setFilteredData(requestAPI.data.ListaOficinas)
-      setTimeout(function () { setLoadingVisible(false) }, 500);
 
+      //Coloquei esse timeout para ser possivel ver o loading.
+      setTimeout(function () { setLoadingVisible(false) }, 500);
 
     } catch (err) {
       const message =
@@ -38,9 +38,7 @@ export default function Workshop() {
           : 'Não foi possivel enviar dados para a API.';
 
       Alert.alert('Ooopsss', message);
-      setLoadingVisible(false) 
-
-      //setLoading(false)
+      setLoadingVisible(false)
     }
   }
 
@@ -48,7 +46,7 @@ export default function Workshop() {
     console.log('props navigateToDetailsWorkshop:', props);
     navigation.navigate('DetailsWorkshop', props)
   }
-  
+
   const [search, setSearch] = useState('');
   const [filteredData, setFilteredData] = useState();
   const searchFilter = (text) => {
@@ -68,6 +66,11 @@ export default function Workshop() {
       setSearch(text);
     }
   }
+  function navigateToMapWorkshops() {
+    //console.log('props:',props);
+    navigation.navigate('MapWorkshops', data)
+  }
+
   return (
     <>
       <Loading loadingVisible={loadingVisible} />
@@ -86,7 +89,7 @@ export default function Workshop() {
         />
         <TouchableOpacity
           style={styles.headerMap}
-          onPress={() => { }}
+          onPress={() => navigateToMapWorkshops()}
         >
           <Foundation name="map" size={24} color='#3D4585' />
         </TouchableOpacity>

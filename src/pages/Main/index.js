@@ -25,6 +25,11 @@ export default function Main() {
     //console.log('props:',props);
     navigation.navigate('SelectAssociated')
   }
+
+  function navigateToMapWorkshops(props) {
+    //console.log('props:',props);
+    navigation.navigate('MapWorkshops')
+  }
   /* 
     async function loadAuth(param) {
       try {
@@ -83,7 +88,7 @@ export default function Main() {
           />
           <Text style={styles.mainCardText}>{`Indicar um\namigo`}</Text>
         </TouchableOpacity>
-{/*         <TouchableOpacity
+        {/*         <TouchableOpacity
           style={styles.mainCard}
           onPress={() => { }}
         >
@@ -100,8 +105,9 @@ export default function Main() {
         <View style={styles.footerCard}>
           <Text style={styles.footerCardPlanText}>{`Plano: ${car.plan}`}</Text>
           <TouchableOpacity
+            disabled={true}
             style={styles.footerCardItem}
-            onPress={() => { }}
+            onPress={() => navigateToMapWorkshops()}
           >
             <Image
               source={require('../../../assets/images/carro-novo-onix.png')}
