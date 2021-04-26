@@ -6,8 +6,8 @@ import { colors, sizes, theme } from '../../constants/theme';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
     alignItems: 'center',
+    justifyContent: 'flex-end',
     backgroundColor: colors.blue1
   },
   header: {
@@ -16,24 +16,22 @@ export default StyleSheet.create({
 
 
   main: {
-    backgroundColor: colors.white,
-    height: '90%',
     width: width,
-    //justifyContent: 'center',
+    height: '90%',
     alignItems: 'center',
-    borderTopRightRadius: 25,
     borderTopLeftRadius: 25,
+    borderTopRightRadius: 25,
+    backgroundColor: colors.white,
   },
   mainHeader: {
-    //backgroundColor: colors.red,
-    justifyContent: 'flex-start',
-    alignItems: 'center',
     flex: 1,
+    alignItems: 'center',
+    justifyContent: 'flex-start',
 
   },
   mainHeaderLogo: {
-    height: 120,
     width: 250,
+    height: 120,
     marginTop: -60,
     borderRadius: 10,
 
@@ -44,46 +42,42 @@ export default StyleSheet.create({
     },
     shadowOpacity: 0.22,
     shadowRadius: 2.22,
-    elevation: 3,
+   // elevation: 3,
 
   },
   mainTitle: {
-    marginHorizontal: sizes.small,
     textAlign: 'center',
     color: colors.blue,
     fontSize: sizes.title,
     fontFamily: 'Montserrat-Bold',
+    marginHorizontal: sizes.small,
   },
   mainSubTitle: {
-    marginHorizontal: sizes.medium,
-    textAlign: 'justify',
     color: colors.blue,
+    textAlign: 'justify',
     fontSize: sizes.subTitle,
+    marginHorizontal: sizes.medium,
     fontFamily: 'Montserrat-Regular',
   },
   mainButton: {
-    backgroundColor: colors.blue1,
     width: '90%',
-    padding: sizes.medium,
-    marginVertical: sizes.small,
     borderRadius: 10,
     flexDirection: 'row',
-    //justifyContent: 'center',
     alignItems: 'center',
+    padding: sizes.medium,
+    marginVertical: sizes.small,
+    backgroundColor: colors.blue1,
   },
   mainIcon: {
-    height: 25,
     width: 25,
+    height: 25,
     marginHorizontal: sizes.small,
   },
   mainButtonText: {
-    marginHorizontal: sizes.small,
     width: '85%',
     color: colors.white,
     fontSize: sizes.subTitle,
+    marginHorizontal: sizes.small,
     fontFamily: 'Montserrat-Regular',
   },
-
-
-
 })

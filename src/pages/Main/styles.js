@@ -83,11 +83,11 @@ export default StyleSheet.create({
   },
   mainCardText: {
     color: colors.blue,
+    textAlign: 'center',
     padding: sizes.small,
     fontSize: sizes.subTitle,
     fontFamily: 'Montserrat-Bold',
     marginHorizontal: sizes.medium,
-    textAlign: 'center',
   },
 
 
@@ -113,15 +113,15 @@ export default StyleSheet.create({
   footerCardPlanText: {
     color: colors.white,
     padding: sizes.small,
+    margin: sizes.medium,
     fontSize: sizes.text,
     fontFamily: 'Montserrat-Bold',
-    margin: sizes.medium,
   },
   footerCardItem: {
+    borderRadius: 15,
     alignItems: 'center',
     justifyContent: 'center',
     backgroundColor: colors.white,
-    borderRadius: 15,
   },
   footerCardIcon: {
     width: 200,
@@ -151,7 +151,4 @@ export default StyleSheet.create({
     marginHorizontal: sizes.medium,
     fontFamily: 'Montserrat-Regular',
   },
-
-
-
 })

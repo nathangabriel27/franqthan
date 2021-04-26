@@ -9,15 +9,15 @@ export default StyleSheet.create({
     padding: sizes.medium,
   },
   title: {
-    marginHorizontal: sizes.medium,
-    marginVertical: sizes.medium,
     color: colors.blue,
     fontSize: sizes.text,
+    marginVertical: sizes.medium,
     fontFamily: 'Montserrat-Bold',
+    marginHorizontal: sizes.medium,
   },
   mainCard: {
-    margin: sizes.medium,
     borderRadius: 15,
+    margin: sizes.medium,
     padding: sizes.medium,
     backgroundColor: colors.white,
 
@@ -31,7 +31,6 @@ export default StyleSheet.create({
     elevation: 3,
   },
   mainInput: {
-    // backgroundColor: colors.red,
     margin: sizes.small,
     padding: sizes.small,
     borderBottomWidth: 1,
@@ -42,26 +41,26 @@ export default StyleSheet.create({
 
   footer: {
     padding: sizes.small,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   footerButton: {
-    backgroundColor: colors.blue1,
     width: '90%',
-    paddingVertical: sizes.medium,
-    margin: sizes.medium,
     borderRadius: 15,
+    alignItems: 'center',
+    margin: sizes.medium,
     flexDirection: 'row',
     justifyContent: 'flex-end',
-    alignItems: 'center',
+    paddingVertical: sizes.medium,
+    backgroundColor: colors.blue1,
   },
   footerText: {
-    position: 'absolute',
     width: '100%',
     textAlign: 'center',
-    marginVertical: sizes.medium,
     color: colors.white,
+    position: 'absolute',
     fontSize: sizes.text,
+    marginVertical: sizes.medium,
     fontFamily: 'Montserrat-Regular',
    
 
@@ -73,28 +72,5 @@ export default StyleSheet.create({
     marginHorizontal: sizes.medium,
     
   },
-  /*
-  
-  name: route.params.name,
-      CPF: route.params.CPF,
-      email: route.params.email,
-      phone: route.params.phone,
-      : route.params.codAssociado,
-      placa: route.params.placa,
-      friendName: name,
-      friendEmail: email,
-      friendPhone: phone,
-      photo: 'default',
-  
-  
-  
-  */
-
-
-
-
-
-
-
 
 })

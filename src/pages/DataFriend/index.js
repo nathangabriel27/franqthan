@@ -1,32 +1,21 @@
 import React, { useRef, useEffect, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, TextInput, Text, TouchableOpacity, View, KeyboardAvoidingView, Alert, TouchableWithoutFeedback, Keyboard, Platform, ScrollView } from 'react-native';
-import { Foundation } from '@expo/vector-icons';
+import { Image, TextInput, Text, TouchableOpacity, View, KeyboardAvoidingView,  TouchableWithoutFeedback, Keyboard, Platform } from 'react-native';
 
 //Context
 import styles from './styles';
-import { api, http } from '../../services/api'
-import Loading from '../../components/Loading'
 import images from '../../constants/imagensBase64'
-import { usersProfile } from '../../constants/data'
+
 
 export default function CreateAssociated() {
   const route = useRoute()
   const navigation = useNavigation()
-  const [loadingVisible, setLoadingVisible] = useState(false)
 
   const [name, setName] = useState('')
   const [email, setEmail] = useState('')
   const emailRef = useRef()
   const [phone, setPhone] = useState('')
   const phoneRef = useRef()
-
-
-
-
-  useEffect(() => {
-
-  }, [])
 
 
   function navigateToSendFriend(props) {
@@ -42,11 +31,16 @@ export default function CreateAssociated() {
       friendEmail: email,
       friendPhone: phone,
     }
-    //console.log('data navigateToSendFriend:', data);
-    navigation.navigate('SendFriend', data)
+       navigation.navigate('SendFriend', data)
   }
 
-
+  function regexPhone(text) {
+    let reg = text.replace(/\D/g, '')
+    .replace(/(\d{2})(\d)/, '($1)$2') 
+    .replace(/(\d{5})(\d)/, '$1 - $2')
+    .replace(/( - \d{4})\d+?$/, '$1')
+    setPhone(reg)
+  }
   return (
     <TouchableWithoutFeedback
       onPress={Keyboard.dismiss}
@@ -54,8 +48,8 @@ export default function CreateAssociated() {
     >
       <KeyboardAvoidingView
         behavior={Platform.OS == 'ios' ? 'padding' : 'height'}
-        style={{ flex: 1 }}>
-
+        style={{ flex: 1 }}
+        >
         <View style={styles.main}>
           <Text style={styles.title}>Preencha os dados do amigo</Text>
           <View style={styles.mainCard}>
@@ -81,7 +75,7 @@ export default function CreateAssociated() {
               returnKeyType={'next'}
               value={phone}
               ref={phoneRef}
-              onChangeText={(text) => setPhone(text)}
+              onChangeText={(text) => regexPhone(text)}
               onSubmitEditing={() => emailRef.current.focus()}
             />
             <TextInput

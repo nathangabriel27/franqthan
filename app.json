@@ -2,6 +2,9 @@
   "expo": {
     "name": "franqthan",
     "slug": "franqthan",
+    "platforms": [
+      "android"
+    ],
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
@@ -20,6 +23,11 @@
       "supportsTablet": true
     },
     "android": {
+      "package": "com.nathangabriel27.franqthan",
+      "versionCode": 1,
+      "userInterfaceStyle": "light",
+      "permissions": [],
+      "icon": "./assets/icon.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
@@ -27,6 +35,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "userInterfaceStyle": "light",
+    "description": "Desafio Hinova - Dev Nathan Gabriel"
   }
 }

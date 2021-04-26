@@ -9,16 +9,16 @@ export default StyleSheet.create({
     padding: sizes.medium,
   },
   title: {
-    marginHorizontal: sizes.medium,
-    marginVertical: sizes.medium,
 
     color: colors.blue,
     fontSize: sizes.text,
+    marginVertical: sizes.medium,
     fontFamily: 'Montserrat-Bold',
+    marginHorizontal: sizes.medium,
   },
   mainCardMercosul: {
-    margin: sizes.large,
     borderRadius: 15,
+    margin: sizes.large,
     backgroundColor: colors.white,
 
     shadowColor: "#000",
@@ -32,12 +32,12 @@ export default StyleSheet.create({
   },
   mainCardMercosulItem: {
     flexDirection: 'row',
+    alignItems: 'center',
+    padding: sizes.small,
     borderTopLeftRadius: 15,
     borderTopRightRadius: 15,
     backgroundColor: '#2E65DC',
     justifyContent: 'space-between',
-    alignItems: 'center',
-    padding: sizes.small
   },
   mainCardMercosulIcon: {
     width: 30,
@@ -46,49 +46,44 @@ export default StyleSheet.create({
   },
   mainCardMercosulCity: {
     margin: sizes.small,
-    padding: sizes.small,
     color: colors.white,
+    padding: sizes.small,
     fontFamily: 'Montserrat-Regular',
   },
 
 
-
   mainInput: {
-    // backgroundColor: colors.red,
-    marginVertical: sizes.large,
-    paddingVertical: sizes.large,
-
-    fontFamily: 'Montserrat-Regular',
     fontSize: 50,
     textAlign: 'center',
+    marginVertical: sizes.large,
+    paddingVertical: sizes.large,
+    fontFamily: 'Montserrat-Regular',
   },
 
 
   footer: {
     padding: sizes.small,
-    justifyContent: 'center',
     alignItems: 'center',
+    justifyContent: 'center',
   },
   footerButton: {
-    backgroundColor: colors.blue1,
     width: '90%',
-    paddingVertical: sizes.medium,
-    margin: sizes.medium,
     borderRadius: 15,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
     alignItems: 'center',
+    flexDirection: 'row',
+    margin: sizes.medium,
+    justifyContent: 'flex-end',
+    backgroundColor: colors.blue1,
+    paddingVertical: sizes.medium,
   },
   footerText: {
-    position: 'absolute',
     width: '100%',
     textAlign: 'center',
-    marginVertical: sizes.medium,
     color: colors.white,
     fontSize: sizes.text,
+    position: 'absolute',
+    marginVertical: sizes.medium,
     fontFamily: 'Montserrat-Regular',
-
-
   },
   footerIcon: {
     zIndex: 2,
@@ -97,12 +92,4 @@ export default StyleSheet.create({
     marginHorizontal: sizes.medium,
 
   },
-
-
-
-
-
-
-
-
 })

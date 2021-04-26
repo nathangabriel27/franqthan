@@ -4,7 +4,4 @@ import { colors, sizes, margin, padding } from '../../constants/theme';
 
 export default StyleSheet.create({
   
-
-
-
 })

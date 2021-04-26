@@ -1,6 +1,5 @@
-import { Dimensions, StyleSheet, } from 'react-native';
-const { height, width } = Dimensions.get('window');
-import { colors, sizes, theme } from '../../constants/theme';
+import {  StyleSheet, } from 'react-native';
+import { colors, sizes } from '../../constants/theme';
 
 
 export default StyleSheet.create({
@@ -9,15 +8,15 @@ export default StyleSheet.create({
     padding: sizes.medium,
   },
   title: {
-    marginHorizontal: sizes.medium,
-    marginVertical: sizes.medium,
     color: colors.blue,
     fontSize: sizes.text,
+    marginVertical: sizes.medium,
     fontFamily: 'Montserrat-Bold',
+    marginHorizontal: sizes.medium,
   },
   mainCard: {
-    margin: sizes.medium,
     borderRadius: 15,
+    margin: sizes.medium,
     padding: sizes.medium,
     backgroundColor: colors.white,
 
@@ -31,7 +30,6 @@ export default StyleSheet.create({
     elevation: 3,
   },
   mainInput: {
-    // backgroundColor: colors.red,
     margin: sizes.small,
     padding: sizes.small,
     borderBottomWidth: 1,
@@ -41,44 +39,33 @@ export default StyleSheet.create({
 
 
   footer: {
+    alignItems: 'center',
     padding: sizes.small,
     justifyContent: 'center',
-    alignItems: 'center',
   },
   footerButton: {
-    backgroundColor: colors.blue1,
     width: '90%',
-    paddingVertical: sizes.medium,
-    margin: sizes.medium,
     borderRadius: 15,
-    flexDirection: 'row',
-    justifyContent: 'flex-end',
     alignItems: 'center',
+    flexDirection: 'row',
+    margin: sizes.medium,
+    justifyContent: 'flex-end',
+    paddingVertical: sizes.medium,
+    backgroundColor: colors.blue1,
   },
   footerText: {
-    position: 'absolute',
     width: '100%',
-    textAlign: 'center',
-    marginVertical: sizes.medium,
     color: colors.white,
+    textAlign: 'center',
+    position: 'absolute',
     fontSize: sizes.text,
+    marginVertical: sizes.medium,
     fontFamily: 'Montserrat-Regular',
-   
-
   },
   footerIcon: {
     zIndex: 2,
     width: 30,
     height: 30,
     marginHorizontal: sizes.medium,
-    
   },
-
-
-
-
-
-
-
-
 })

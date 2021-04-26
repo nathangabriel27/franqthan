@@ -5,10 +5,8 @@ import { colors, sizes, theme } from '../../constants/theme';
 
 export default StyleSheet.create({
   container: {
-
-    justifyContent: 'center',
     alignItems: 'center',
-    //backgroundColor: '#faa'
+    justifyContent: 'center',
   },
   header: {
     width: width,
@@ -32,13 +30,13 @@ export default StyleSheet.create({
   },
   headerInput: {
     width: '80%',
-    marginBottom: -60,
     borderRadius: 8,
+    marginBottom: -60,
+    padding: sizes.large,
     marginVertical: sizes.medium,
     marginHorizontal: sizes.small,
-    padding: sizes.large,
-    fontFamily: 'Montserrat-Regular',
     backgroundColor: colors.white,
+    fontFamily: 'Montserrat-Regular',
 
     shadowColor: "#000",
     shadowOffset: {
@@ -50,12 +48,12 @@ export default StyleSheet.create({
     elevation: 3,
   },
   headerMap: {
-    backgroundColor: colors.white,
-    marginBottom: -60,
     borderRadius: 8,
+    marginBottom: -60,
+    padding: sizes.large,
     marginVertical: sizes.medium,
     marginHorizontal: sizes.small,
-    padding: sizes.large,
+    backgroundColor: colors.white,
 
     shadowColor: "#000",
     shadowOffset: {
@@ -70,16 +68,15 @@ export default StyleSheet.create({
 
 
   main: {
-    marginTop: 40,
-    //backgroundColor: colors.green,
     flex: 1,
+    marginTop: 40,
   },
   mainCard: {
-    backgroundColor: colors.white,
     borderRadius: 20,
-    marginHorizontal: sizes.medium,
-    marginVertical: sizes.small,
     padding: sizes.small,
+    marginVertical: sizes.small,
+    backgroundColor: colors.white,
+    marginHorizontal: sizes.medium,
 
     shadowColor: "#000",
     shadowOffset: {
@@ -95,11 +92,8 @@ export default StyleSheet.create({
   },
   mainCardPhoto: {
     margin: sizes.small,
-    // backgroundColor: colors.gray,
     alignItems: 'center',
     justifyContent: 'center',
-    //width: '40%',
-
   },
   mainCardLogo: {
     width: 140,
@@ -116,17 +110,17 @@ export default StyleSheet.create({
     marginHorizontal: sizes.small,
   },
   mainCardDistanceTitle: {
-    marginHorizontal: sizes.small,
-    textAlign: 'center',
     color: colors.blue,
+    textAlign: 'center',
     fontSize: sizes.text,
     fontFamily: 'Montserrat-Bold',
+    marginHorizontal: sizes.small,
   },
   mainCardDistanceText: {
-    marginHorizontal: sizes.small,
-    textAlign: 'center',
     color: colors.blue,
+    textAlign: 'center',
     fontSize: sizes.text,
+    marginHorizontal: sizes.small,
     fontFamily: 'Montserrat-Regular',
 
   },
@@ -139,34 +133,30 @@ export default StyleSheet.create({
     paddingHorizontal: sizes.small,
   },
   mainCardDetailsTitle: {
-    //marginHorizontal: sizes.small,
-    textAlign: 'center',
     color: colors.blue,
+    textAlign: 'center',
     fontSize: sizes.title,
     fontFamily: 'Montserrat-Bold',
   },
   mainCardDetailsSubtitle: {
-    marginHorizontal: sizes.small,
-    textAlign: 'justify',
     color: colors.blue,
+    textAlign: 'justify',
     fontSize: sizes.subTitle,
+    marginHorizontal: sizes.small,
     fontFamily: 'Montserrat-Regular',
   },
   mainCardFooter: {
-    borderTopColor: colors.blue,
     borderTopWidth: 1,
-    paddingHorizontal: sizes.medium,
     alignItems: 'center',
-    justifyContent: 'center'
+    justifyContent: 'center',
+    borderTopColor: colors.blue,
+    paddingHorizontal: sizes.medium,
   },
   mainCardFooterText: {
+    color: colors.blue,
    margin: sizes.small,
-
-   color: colors.blue,
    fontSize: sizes.subTitle,
    fontFamily: 'Montserrat-Regular',
   },
-
-
 
 })

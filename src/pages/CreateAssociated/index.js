@@ -1,19 +1,13 @@
-import React, { useRef, useEffect, useState } from 'react';
-import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, TextInput, Text, TouchableOpacity, View, KeyboardAvoidingView, Alert, TouchableWithoutFeedback, Keyboard, Platform, ScrollView } from 'react-native';
-import { Foundation } from '@expo/vector-icons';
+import React, { useRef, useState } from 'react';
+import { useNavigation } from '@react-navigation/native';
+import { Image, TextInput, Text, TouchableOpacity, View, KeyboardAvoidingView, TouchableWithoutFeedback, Keyboard, Platform } from 'react-native';
 
 //Context
 import styles from './styles';
-import { api, http } from '../../services/api'
-import Loading from '../../components/Loading'
 import images from '../../constants/imagensBase64'
-import { usersProfile } from '../../constants/data'
 
 export default function CreateAssociated() {
-  const route = useRoute()
   const navigation = useNavigation()
-  const [loadingVisible, setLoadingVisible] = useState(false)
 
   const [name, setName] = useState('')
   const [CPF, setCPF] = useState('')
@@ -25,13 +19,6 @@ export default function CreateAssociated() {
   const [codAssociado, setCodAssociado] = useState()
   const codAssociadoRef = useRef()
 
-
-
-  useEffect(() => {
-
-  }, [])
-
-
   function navigateToMercosul(props) {
     const data = {
       name: name,
@@ -40,9 +27,24 @@ export default function CreateAssociated() {
       phone: phone,
       codAssociado: parseInt(codAssociado),
     }
-    // console.log('data navigateToMercosul:', data);
     navigation.navigate('Mercosul', data)
   }
+  function regexCPF(text) {
+    let reg = text.replace(/\D/g, '')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d)/, '$1.$2')
+      .replace(/(\d{3})(\d{1,2})/, '$1-$2')
+      .replace(/(-\d{2})\d+?$/, '$1')
+    setCPF(reg)
+  }
+  function regexPhone(text) {
+    let reg = text.replace(/\D/g, '')
+      .replace(/(\d{2})(\d)/, '($1)$2')
+      .replace(/(\d{5})(\d)/, '$1 - $2')
+      .replace(/( - \d{4})\d+?$/, '$1')
+    setPhone(reg)
+  }
+
 
   return (
     <TouchableWithoutFeedback
@@ -67,7 +69,6 @@ export default function CreateAssociated() {
               value={name}
               onChangeText={(text) => setName(text)}
               onSubmitEditing={() => CPFRef.current.focus()}
-
             />
             <TextInput
               style={styles.mainInput}
@@ -79,7 +80,7 @@ export default function CreateAssociated() {
               returnKeyType={'next'}
               value={CPF}
               ref={CPFRef}
-              onChangeText={(text) => setCPF(text)}
+              onChangeText={(text) => regexCPF(text)}
               onSubmitEditing={() => emailRef.current.focus()}
             />
             <TextInput
@@ -105,7 +106,7 @@ export default function CreateAssociated() {
               returnKeyType={'next'}
               value={phone}
               ref={phoneRef}
-              onChangeText={(text) => setPhone(text)}
+              onChangeText={(text) => regexPhone(text)}
               onSubmitEditing={() => codAssociadoRef.current.focus()}
             />
             <TextInput

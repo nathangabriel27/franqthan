@@ -6,8 +6,8 @@ import { colors, sizes, theme } from '../../constants/theme';
 export default StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'flex-end',
     alignItems: 'center',
+    justifyContent: 'flex-end',
     backgroundColor: colors.blue1
   },
   calloutName: {
@@ -15,74 +15,67 @@ export default StyleSheet.create({
     fontFamily: 'Montserrat-Bold',
   },
   calloutText: {
-
     fontSize: sizes.title,
     fontFamily: 'Montserrat-Regular',
   },
 
   cardCar: {
-    backgroundColor: colors.blue,
     width: width,
     marginTop: -40,
     //position:'absolute'
-    borderTopRightRadius: 40,
-    borderTopLeftRadius: 40,
-    justifyContent: 'center',
     alignItems: 'center',
+    borderTopLeftRadius: 40,
+    borderTopRightRadius: 40,
+    justifyContent: 'center',
+    backgroundColor: colors.blue,
   },
   cardName: {
-    marginVertical: sizes.large,
-    paddingVertical: sizes.large,
-    marginHorizontal: sizes.large,
     width: width,
     textAlign: 'center',
     color: colors.white,
     fontSize: sizes.title,
+    marginVertical: sizes.large,
+    paddingVertical: sizes.large,
+    marginHorizontal: sizes.large,
     fontFamily: 'Montserrat-Bold',
   },
   cardDetails: {
-    backgroundColor: colors.blue1,
     width: width,
     flexDirection: 'row',
-    borderTopRightRadius: 20,
     borderTopLeftRadius: 20,
+    borderTopRightRadius: 20,
+    backgroundColor: colors.blue1,
   },
   cardDetailsItens: {
     flex: 1,
     padding: sizes.medium,
   },
   cardDetailsText: {
-
-    marginHorizontal: sizes.small,
     padding: sizes.small,
     color: colors.white,
     fontSize: sizes.subTitle,
+    marginHorizontal: sizes.small,
     fontFamily: 'Montserrat-Regular',
   },
   cardDetailsPhoto: {
 
   },
   cardDetailsPhotoCar: {
-    height: 120,
     width: 210,
-    //position: 'absolute',
+    height: 120,
     marginTop: -40,
-    // backgroundColor: colors.red,
-
   },
 
   mainButtonText: {
-    marginHorizontal: sizes.small,
     width: '85%',
     color: colors.white,
     fontSize: sizes.subTitle,
+    marginHorizontal: sizes.small,
     fontFamily: 'Montserrat-Regular',
   },
   mainIcon: {
-    height: 25,
     width: 25,
+    height: 25,
     marginHorizontal: sizes.small,
   },
-
-
 })

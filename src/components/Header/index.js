@@ -1,7 +1,7 @@
-import React, { useContext, useEffect } from 'react';
+import React from 'react';
 import { useNavigation } from '@react-navigation/native'
 import { TouchableOpacity, Text, Image, Dimensions, StatusBar, View } from 'react-native';
-import { colors, sizes } from '../../constants/theme';
+import { colors } from '../../constants/theme';
 
 import images from '../../constants/imagensBase64'
 import styles from './styles'
@@ -11,12 +11,7 @@ export default function Header(props) {
   const navigation = useNavigation()
 
   const { title, image64, borderRadius, data } = props
-  /* 
-  useEffect(() => {
-    console.log('data', data.scene.descriptor.options);
-  }, [])
-  
- */
+
   return (
     <>
       <StatusBar backgroundColor={colors.blue1} barStyle="light-content" />

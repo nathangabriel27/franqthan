@@ -4,7 +4,7 @@ const usersProfile = {
   id: 27,
   name: 'Nathan Gabriel',
   email: 'nathangabriel27@gmail.com',
-  phone: '31994827158',
+  phone: '(31)99482 - 7158',
   cpf: '10025017999',
   codAssociado: 627,
   placa: 'UAI2A20',

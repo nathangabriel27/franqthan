@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React from 'react';
 import { createStackNavigator } from '@react-navigation/stack';
 import { NavigationContainer } from '@react-navigation/native';
 
@@ -16,15 +16,11 @@ import MapWorkshops from '../pages/MapWorkshops'
 
 //Components
 import Header from '../components/Header'
-//import images from '../constants/imagensBase64'
-
 
 const Stack = createStackNavigator();
 
 export default function Routes() {
 
-  useEffect(() => {
-  }, [])
 
   return (
     <NavigationContainer>

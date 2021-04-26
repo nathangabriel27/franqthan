@@ -1,28 +1,19 @@
-import React, { useRef, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, TextInput, Text, TouchableOpacity, View, KeyboardAvoidingView, Alert, TouchableWithoutFeedback, Keyboard, Platform, ScrollView } from 'react-native';
+import { Image, TextInput, Text, TouchableOpacity, View } from 'react-native';
 import { Foundation } from '@expo/vector-icons';
 
 //Context
 import styles from './styles';
-import { api, http } from '../../services/api'
-import Loading from '../../components/Loading'
 import images from '../../constants/imagensBase64'
-import { usersProfile } from '../../constants/data'
+
 
 export default function Mercosul() {
   const route = useRoute()
   const navigation = useNavigation()
-  const [loadingVisible, setLoadingVisible] = useState(false)
+
 
   const [placa, setPlaca] = useState('')
-
-
-
-  useEffect(() => {
-    //console.log('route.params Mercosul: ', route.params);
-  }, [])
-
 
   function navigateToDataFriend(props) {
     const data = {
@@ -34,7 +25,7 @@ export default function Mercosul() {
       photo: 'default',
       placa: placa,
     }
-    //console.log('data navigateToDataFriend:', data);
+
     navigation.navigate('DataFriend', data)
   }
 
@@ -58,8 +49,6 @@ export default function Mercosul() {
               resizeMode={'contain'}
             />
           </View>
-
-
           <TextInput
             style={styles.mainInput}
             autoCorrect={false}
@@ -71,14 +60,11 @@ export default function Mercosul() {
             value={placa}
             onChangeText={(text) => setPlaca(text)}
             maxLength={7}
-
             onSubmitEditing={() => navigateToDataFriend()}
           />
-
         </View>
-
-
       </View>
+
       <View style={styles.footer}>
         <TouchableOpacity
           style={styles.footerButton}
@@ -93,7 +79,5 @@ export default function Mercosul() {
         </TouchableOpacity>
       </View>
     </>
-
-
   );
 }

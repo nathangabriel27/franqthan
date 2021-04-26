@@ -1,21 +1,16 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, ImageBackground, Text, TouchableOpacity, View, StatusBar, Alert, StyleSheet, Platform } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Image, Text, TouchableOpacity, View, StatusBar } from 'react-native';
+
 
 //Context
 
 import styles from './styles';
-import { api, http } from '../../services/api'
-import Loading from '../../components/Loading'
 import images from '../../constants/imagensBase64'
 import { car } from '../../constants/data'
 
 export default function Main() {
-  const route = useRoute()
   const navigation = useNavigation()
-  const [loadingVisible, setLoadingVisible] = useState(false)
 
   function navigateToWorkshop(props) {
     //console.log('props:',props);
@@ -30,36 +25,11 @@ export default function Main() {
     //console.log('props:',props);
     navigation.navigate('MapWorkshops')
   }
-  /* 
-    async function loadAuth(param) {
-      try {
-        setLoadingVisible(true)
-        const requestAPI = await api.get('/authUser',
-          {
-            params: {
-              email: param.email,
-              id: param.id,
-              socialmethod: param.social
-            }
-          }
-        )
-        //console.log("login", requestAPI.data);
-  
-      } catch (err) {
-        const message =
-          err.response && err.response.data
-            ? ` Não foi possivel enviar dados para a API. Verique sua conexão. \nErro code: [ ${err} ]`
-            : 'Não foi possivel enviar dados para a API.';
-  
-        Alert.alert('Ooopsss', message);
-        setLoadingVisible(false)
-        //setLoading(false)
-      }
-    }
-   */
 
   return (
     <>
+      <StatusBar backgroundColor={'#3D4585'} barStyle="light-content" />
+
       <View style={styles.header}>
         <Text style={styles.headerTitle}>Olá</Text>
         <Text style={styles.headerSubtitle}>Nathan Gabriel</Text>
@@ -88,17 +58,6 @@ export default function Main() {
           />
           <Text style={styles.mainCardText}>{`Indicar um\namigo`}</Text>
         </TouchableOpacity>
-        {/*         <TouchableOpacity
-          style={styles.mainCard}
-          onPress={() => { }}
-        >
-          <Image
-            source={{ uri: images.workshop }}
-            style={styles.mainCardIcon}
-            resizeMode={'contain'}
-          />
-          <Text style={styles.mainCardText}>{`Adicionar\nnovo Veiculo`}</Text>
-        </TouchableOpacity> */}
       </View>
 
       <View style={styles.footer}>

@@ -6,11 +6,6 @@ const { height, width } = Dimensions.get('window');
 export default function Loading(props) {
 
   const { loadingVisible, mensage } = props
-  //const loadingVisible = false
-  /* 
-    useEffect(() => {
-      console.log('loadingVisible', loadingVisible);
-    }, []) */
 
   return (
     <>
@@ -40,7 +35,7 @@ const styles = StyleSheet.create({
   text: {
     color: colors.white,
     margin: sizes.medium,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Montserrat-Bold',
     fontSize: sizes.title
   }
 });

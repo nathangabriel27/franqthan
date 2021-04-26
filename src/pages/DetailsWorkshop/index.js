@@ -1,30 +1,18 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, {  useEffect, useState } from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
-import { Image, Linking, Text, TouchableOpacity, View, StatusBar, Alert, StyleSheet, Platform } from 'react-native';
-import { FontAwesome } from '@expo/vector-icons';
-import { MaterialIcons } from '@expo/vector-icons';
+import { Image, Linking, Text, TouchableOpacity, View, Platform } from 'react-native';
 import * as MailComposer from 'expo-mail-composer'
 
 
 //Context
 
 import styles from './styles';
-import { api, http } from '../../services/api'
-import Loading from '../../components/Loading'
-//import images from '../../components/imagensBase64'
 
 export default function DetailsWorkshop() {
   const route = useRoute()
-  const navigation = useNavigation()
-  const [loadingVisible, setLoadingVisible] = useState(false)
 
 
-  useEffect(() => {
-    //console.log("DetailsWorkshop route:", route.params.Nome);
-
-  }, [])
   function openMail(props) {
-
     MailComposer.composeAsync({
       subject: `Preciso da ajuda de vocês ${route.params.Nome}`,
       recipients: [`${props}`],
@@ -33,14 +21,20 @@ export default function DetailsWorkshop() {
       `
     })
   }
+
   function openNumberPhone(props) {
     Linking.openURL(`tel:${props}`)
+  }
+
+  function openGps(lat, lng) {
+    var scheme = Platform.OS === 'ios' ? 'maps:' : 'geo:';
+    var url = scheme + `${lat},${lng}`;
+    Linking.openURL(url);
   }
 
   return (
     <>
       <View style={styles.container}>
-
         <View style={styles.main}>
           <View style={styles.mainHeader}>
             <Image
@@ -89,7 +83,7 @@ export default function DetailsWorkshop() {
           }
           <TouchableOpacity
             style={styles.mainButton}
-            onPress={() => { }}
+            onPress={() => openGps(route.params.Latitude, route.params.Longitude)}
           >
             <Image
               source={require('../../../assets/images/mapMarker.png')}
@@ -110,9 +104,6 @@ export default function DetailsWorkshop() {
             />
             <Text style={styles.mainButtonText} numberOfLines={1}>{route.params.Email}</Text>
           </TouchableOpacity>
-
-
-
         </View>
 
       </View>

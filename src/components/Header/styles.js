@@ -15,7 +15,6 @@ export default StyleSheet.create({
     width: '20%',
     alignItems: 'center',
     justifyContent: 'center',
-    //backgroundColor: colors.blue1,
   },
   arrowIcon: {
     width: 20,
@@ -28,7 +27,6 @@ export default StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
-    //backgroundColor: colors.green,
   },
   drinkTitleIcon: {
     width: 25,
@@ -41,8 +39,7 @@ export default StyleSheet.create({
     textAlign: 'center',
     color: colors.white,
     fontSize: sizes.title,
-    fontFamily: 'Nunito-Bold',
+    fontFamily: 'Montserrat-Bold',
     paddingVertical: sizes.small,
-    //backgroundColor: colors.black,
   },
 })
