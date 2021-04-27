@@ -1,7 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect} from 'react';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { Image, Text, TouchableOpacity, View, StatusBar } from 'react-native';
-
+import * as Location from 'expo-location';
+import * as Permissions from 'expo-permissions'
 
 //Context
 
@@ -25,6 +26,7 @@ export default function Main() {
     //console.log('props:',props);
     navigation.navigate('MapWorkshops')
   }
+
 
   return (
     <>

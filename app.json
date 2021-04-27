@@ -26,7 +26,10 @@
       "package": "com.nathangabriel27.franqthan",
       "versionCode": 1,
       "userInterfaceStyle": "light",
-      "permissions": [],
+      "permissions": [
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_FINE_LOCATION"
+      ],
       "icon": "./assets/icon.png",
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",

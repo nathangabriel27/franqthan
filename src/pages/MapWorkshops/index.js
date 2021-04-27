@@ -21,6 +21,7 @@ export default function MapWorkshops() {
   useEffect(() => {
     (async () => {
       let { status } = await Location.requestForegroundPermissionsAsync();
+      let { validation } = Location.getBackgroundPermissionsAsync()
       if (status !== 'granted') {
         Alert.alert('Oooppss', 'Precisamos de permissão para usar a localização do seu aparelho.');
         return;
